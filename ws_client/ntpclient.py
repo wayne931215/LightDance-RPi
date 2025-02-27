@@ -7,9 +7,9 @@ HOST = (SERVER_IP, NTP_SERVER_PORT)
 
 
 class NTPClient:
-    def __init__(self) -> None:
+    def __init__(self, callBack = None) -> None:
         self.timeData = {"t0": None, "t1": None, "t2": None, "t3": None}
-        self.callBack: function = None
+        self.callBack: function = callBack 
 
     def startTimeSync(self) -> None:
         with self.client as client:
